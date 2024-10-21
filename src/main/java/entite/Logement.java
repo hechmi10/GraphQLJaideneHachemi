@@ -36,6 +36,7 @@ public class Logement {
 		this.reference = reference;
 		this.adresse = adresse;
 	}
+
 	
 	public int getReference() {
 		return reference;

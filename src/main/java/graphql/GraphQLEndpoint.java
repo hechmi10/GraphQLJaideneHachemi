@@ -16,6 +16,6 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
     private static GraphQLSchema buildSchema() {
          LogementRepository lr = new LogementRepository();
          RendezVousRepository rdvRepo = new RendezVousRepository();
-         return SchemaParser.newParser().file("schema.graphql").resolvers(new Query(rdvRepo)).build().makeExecutableSchema();
+         return SchemaParser.newParser().file("schema.graphql").resolvers(new Query(rdvRepo,lr),new Mutation(rdvRepo,lr)).build().makeExecutableSchema();
     }
 }

@@ -23,6 +23,13 @@ public class RendezVous {
 		this.numTel = numTel;
 	}
 
+	public RendezVous(int id, String date, String heure, String num) {
+		this.id = id;
+		this.date = date;
+		this.heure = heure;
+		this.numTel = num;
+	}
+
 	public int getId() {
 		return id;
 	}

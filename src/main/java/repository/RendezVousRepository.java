@@ -23,14 +23,15 @@ public class RendezVousRepository {
 		return listeRendezVous;
     }
     
-    public boolean addRendezVous(RendezVous rendezVous){
+    public RendezVous addRendezVous(RendezVous rendezVous){
 		int refLogement=rendezVous.getLogement().getReference();
 		Logement logement=logementMetier.getLogementsByReference(refLogement);
 		if(logement!=null){
 			rendezVous.setLogement(logement);
-			return listeRendezVous.add(rendezVous);
+			listeRendezVous.add(rendezVous);
+			return rendezVous;
 		}
-		return false;
+		return null;
 	}
     public List<RendezVous> getListeRendezVousByLogementRef(int reference) {
 		List<RendezVous> liste=new ArrayList<RendezVous>();
